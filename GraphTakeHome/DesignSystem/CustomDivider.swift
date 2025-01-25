@@ -13,3 +13,7 @@ struct CustomDivider: View {
         }
     }
 }
+
+#Preview {
+    CustomDivider(height: 1, opacity: 0.5)
+}
