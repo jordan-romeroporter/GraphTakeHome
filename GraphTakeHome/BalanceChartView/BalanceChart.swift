@@ -20,7 +20,6 @@ struct BalanceChart: View {
                         x: .value("Date", entry.date),
                         y: .value("Balance", entry.balance)
                     )
-                    .interpolationMethod(.cardinal)
                 }
                 
                 if let selectedDate = selectedDate {
@@ -31,6 +30,7 @@ struct BalanceChart: View {
             }
             .chartYAxis(.hidden)
             .chartXAxis(.hidden)
+            .animation(nil, value: filteredBalanceData)
             .gesture(
                 LongPressGesture(minimumDuration: 0.1)
                     .sequenced(before: DragGesture(minimumDistance: 0))
